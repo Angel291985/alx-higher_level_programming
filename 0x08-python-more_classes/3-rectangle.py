@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pytho3
 """Module to create a Rectangle Object
 """
 
@@ -54,4 +54,4 @@ class Rectangle:
             result += "#" * self.__width
             if (i != self.__height - 1):
                 result += "\n"
-        return
+        return result
