@@ -7,6 +7,6 @@ def is_kind_of_class(obj, a_class):
     """
     if isinstance(obj.__class__, a_class):
         return True
-    if isinstance(obj.__class__, a_class):
+    if issubclass(obj.__class__, a_class):
         return True
     return False
