@@ -3,8 +3,7 @@
 A python script that takes in a URL, sends a request to the URL
 and displays the body of the response(decoded in utf-8).
 """
-import urllib.request
-import urllib.parse
+from urllib import request, error
 import sys
 
 
@@ -17,9 +16,9 @@ if __name__ == "__main__":
     query_string = urllib.parse.urlencode(param)
     data = query_string.encode("ascii")
     req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as response:
-        # If you do not pass the data argument, urllib uses a GET request.
-        # One way in which GET and POST requests differ is that POST requests
-        # often have "side-effects".
-        response_text = response.read().decode("utf-8")
-        print(response_text)
+
+    try:
+        with urllib.request.urlopen(req) as response:
+            print(response.read().decode('UTF-8'))
+    except error.HTTPError as er:
+        print('Error code:', er.code)
