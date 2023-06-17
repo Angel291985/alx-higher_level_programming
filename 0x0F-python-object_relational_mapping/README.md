@@ -1,1 +1,1 @@
-Python object
+Python Object relational mapping

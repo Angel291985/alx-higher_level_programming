@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-python script that lists all states from the database hbtn_0e_0_usa
-with a given name
+A script that displays all values in the states table of hbtn_0e_0_usa where
+name matches the argument
 """
 
 import MySQLdb
